@@ -1,0 +1,42 @@
+*{
+    padding:0;
+    margin:0;
+    color:rgb(255, 255, 255);
+    
+    font-family: Arial, Helvetica, sans-serif;       
+    list-style: none;
+    @-ms-viewport {
+        width: extend-to-zoom;
+        zoom: 1.0;
+}
+}
+.cuerpo{
+    height: 85vh;
+    width: 100%;
+    background-image: url("../../../assets/img/olivanders.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.titulo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+  
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+}
+.info{
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

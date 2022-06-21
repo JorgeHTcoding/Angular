@@ -1,0 +1,47 @@
+*{
+    
+    padding:0;
+    margin:0;
+    color:rgb(221, 221, 221);
+    font-family: Arial, Helvetica, sans-serif;       
+    list-style: none;
+    @-ms-viewport {
+        width: extend-to-zoom;
+        zoom: 1.0;
+}
+}
+.intNav{
+    
+    min-width: 100%;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;    
+    background-color: #222222;
+  
+}
+.mybooks{
+    font-size: 3rem;
+    padding-left: 120px;
+}
+.links{
+    max-width: 10%;
+    min-width: 10%;
+    display: flex;   
+    justify-content: space-between;
+    padding-right: 120px;
+    font-size: 1.3rem;
+}
+a:link { 
+text-decoration: none; 
+}
+a:visited {
+text-decoration: none; 
+}
+a:hover { 
+text-decoration: none; 
+}
+a:active {
+text-decoration: none; 
+}
