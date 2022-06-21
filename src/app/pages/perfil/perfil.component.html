@@ -1,1 +1,71 @@
-<p>perfil works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="perfil.component.css" type="text/css">
+    <title></title>
+</head>
+
+<body>
+    <div class="cuerpo">
+        <div class="main">
+            <div class="leftBox">
+                <div class="leftBoxBody">
+                    <img class="fotoPerfil" src={{miUsuario.url}}>
+                    <h1 class="nombrePerfil" id="nombrePerfil">Sleepy Wombat</h1>
+                    <div class="bloquePerfil">
+                        <div class="bloqueCampo">
+                            <div class="campo">Nombre</div>
+                            <div class="campo">Apellidos</div>
+                            <div class="campo">Correo</div>
+                        </div>
+                        <div class="bloqueValor">
+                            <div class="box1">
+                                <div class="valorCampo" id="valorNombre">
+                                    <div>
+                                        {{miUsuario.nombre}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box2">
+                                <div class="valorCampo" id="valorApellido"> {{miUsuario.apellidos}}</div>
+                            </div>
+                            <div class="box3">
+                                <div class="valorCampo" id="valorCorreo">{{miUsuario.correo}}</div>
+                            </div>
+                        </div>
+                        <div class="bloqueCorreo">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightBox">
+                <div class="rightBoxBody">
+                    <div class="title">Editar datos</div>
+                    <div class="form">
+                        <div class="input">
+                            <input #input1 class="input1" type="text" placeholder="Nombre" />
+                        </div>
+                        <div class="input">
+                            <input #input2 class="input1" type="text" placeholder="Apellidos " />
+                        </div>
+                        <div class="input">
+                            <input #input3 class="input1" type="text" placeholder="Correo" />
+                        </div>
+                        <div class="input">
+                            <input #input4 class="input1" type="text" placeholder="URL" />
+                        </div>
+                        <button class="submit" on-click=enviar(input1,input2,input3,input4)>Modificar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
