@@ -1,0 +1,72 @@
+<div class="cuerpo">
+    <div class="cards">
+        <div class="card" *ngFor="let valor of miLibro; let i = index; odd as isOdd">
+            <div class="cardBox">
+                <div class="cardBoxBody">
+                    <div class="bloqueImg">
+                        <img class="fotoLibro" src={{valor.photo}}>
+                    </div>
+                    <h3 class="nombreLibro" id="nombreLibro">{{valor.titulo}}</h3>
+                    <div class="bloqueLibro">
+                        <div class="bloqueCampo">
+                            <div class="campo">ID Libro:</div>
+                            <div class="campo">ID User:</div>
+                            <div class="campo">Tipo</div>
+                            <div class="campo">Autor</div>
+                            <div class="campo">Precio</div>
+                        </div>
+                        <div class="bloqueValor">
+                            <div class="box1">
+                                <div class="valorCampo">{{valor.id_libro | codigolibro}} </div>
+                            </div>
+                            <div class="box2">
+                                <div class="valorCampo">{{valor.id_usuario}} </div>
+                            </div>
+                            <div class="box4">
+                                <div class="valorCampo">{{valor.tipoLibro}} </div>
+                            </div>
+                            <div class="box5">
+                                <div class="valorCampo">{{valor.autor}} </div>
+                            </div>
+                            <div class="box7">
+                                <div class="valorCampo">{{valor.precio}} € </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button [ngClass]=" isOdd ? 'submit' : 'submitAlt'" class="submit">Comprar</button>
+            </div>
+            <div *ngIf=" miLibro.length === 0 ">No existe ningúna entrada de libro </div>
+        </div>
+    </div>
+    <div class="bloqueForm">
+        <div class="bloqueFormBody">
+            <div class="form">
+                <h1 class="titleForm">Introduce un libro</h1>
+                <div class="input">
+                    <input #input1 class="input1" type="number" placeholder="ID Libro" />
+                </div>
+                <div class="input">
+                    <input #input2 class="input1" type="number" placeholder="ID User " />
+                </div>
+                <div class="input">
+                    <input #input3 class="input1" type="text" placeholder="Título" />
+                </div>
+                <div class="input">
+                    <input #input4 class="input1" type="text" placeholder="Tipo" />
+                </div>
+                <div class="input">
+                    <input #input5 class="input1" type="text" placeholder="Autor" />
+                </div>
+                <div class="input">
+                    <input #input6 class="input1" type="number" placeholder="Precio" />
+                </div>
+                <div class="input">
+                    <input #input7 class="input1" type="text" placeholder="URL" />
+                </div>
+                <button class="botonForm"
+                    on-click=enviar(input1,input2,input3,input4,input5,input6,input7)>Introducir</button>
+            </div>
+        </div>
+    </div>
+</div>

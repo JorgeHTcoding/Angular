@@ -27,7 +27,7 @@ export class PerfilComponent implements OnInit {
   console.log(this.miUsuario.nombre);  
   this.miUsuario.apellidos = nuevoApellido.value; 
   this.miUsuario.correo = nuevoCorreo.value;   
-  this.miUsuario.correo = nuevoURL.value;   
+  this.miUsuario.url = nuevoURL.value;   
    
 }
   ngOnInit(): void {
