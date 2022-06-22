@@ -9,6 +9,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { FormularioRegistroComponent } from './component/formulario-registro/formulario-registro.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
+import { LibrosComponent } from './pages/libros/libros.component';
+import { CodigolibroPipe } from './pipes/codigolibro.pipe';
 
 
 
@@ -21,6 +23,8 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
     FormularioRegistroComponent,
     RegistroComponent,
     PerfilComponent,
+    LibrosComponent,
+    CodigolibroPipe,
       
   ],
   imports: [
