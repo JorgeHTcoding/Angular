@@ -3,12 +3,19 @@
     <div class="navegador">
         <div class="intNav">
             <a class="mybooks">MyWands</a>
-            <div class="links">
-                <a class="home" routerLink="">Home</a>
-                <a routerLink="registro">Register</a>
-                <a routerLink="perfil">Perfil</a>
-                <a routerLink="libros">Libros</a>
-
+            <div class="links" *ngIf="usuarioService.logueado == false">
+                <a class="home" routerLink="">Home</a>                
+                <a class="registro" routerLink="registro">Register</a>
+                <a class="login" routerLink="login">Log-In</a>
+            </div>
+            <div class="links" *ngIf="usuarioService.logueado == true">
+                <a class="home" routerLink="">Home</a>                
+                <a class="perfil" routerLink="perfil">Perfil</a>
+                <a class="libros" routerLink="libros">Libros</a>
+                <a class="addBook" routerLink="addBook">AddBook</a>
+                <a class="updateBook" routerLink="updateBook">UpdateBook</a>
+                <a class="showBook" routerLink="showBook">ShowBook</a>
+               
             </div>
         </div>
     </div>
