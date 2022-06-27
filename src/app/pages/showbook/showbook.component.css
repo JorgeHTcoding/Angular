@@ -1,0 +1,190 @@
+*{
+    padding:0;
+    margin:0;  
+    
+    font-family: Arial, Helvetica, sans-serif;       
+    list-style: none;
+    @-ms-viewport {
+        width: extend-to-zoom;
+        zoom: 1.0;
+}
+}
+.cuerpo{
+    display:flex;
+    flex-direction: column;
+    align-items: center;   
+    height:100vh;
+    width: 100%;
+    background-image: url("../../../assets/img/olivanders.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.inputBox{  
+    height: 100%;
+    margin-top: 30px;
+    display:flex;
+    justify-content: center;
+    border-radius: 5px ;
+}
+
+.input1 {
+    color:rgb(39, 39, 39);
+    text-align: center;
+    font-size: 1.1rem;   
+    border:1px solid rgb(46, 46, 46);  
+    border-radius: 5px ;
+    padding:10px;    
+    
+}
+.boxBusc{
+  
+
+  display:flex ; 
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+
+}
+.bloqueCards{
+    height: 80vh;
+    height: 100vh;
+    width: 99vw;
+    display: flex;
+    flex-direction: row;    
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  
+ 
+    
+}
+.card{
+    height: 80vh;
+    display: flex;
+    flex-direction: row;   
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.cardBox{   
+
+    display: flex;   
+    flex-direction: column;   
+    align-items: center;
+    max-width: 330px;  
+    min-width: 330px;  
+    max-height: 750px;
+    min-height: 750px;  
+    border: 1px solid grey;
+    border-radius: 5px;
+    background-color: rgba(223, 223, 223, 0.767);
+    box-shadow: 20px 30px 40px 10px rgba(0, 0, 0, 0.712);
+   
+}
+.cardBoxBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.bloqueImg{
+  
+    max-width: 330px;
+    min-height: 500px; 
+}
+.fotoLibro{
+  max-width: 330px;
+  min-height: 500px; 
+}
+.nombreLibro{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color:rgb(214, 214, 214);
+    background-color:rgba(100, 100, 100, 0.767);
+    padding-bottom: 5px;
+    border:1px solid rgba(255, 255, 255, 0.671);
+    box-shadow: 2px 10px 30px 2px rgba(0, 0, 0, 0.568);
+}
+.bloqueLibro{
+    display: flex;   
+    justify-content: space-around;    
+    color:rgb(4, 81, 153);
+    font-weight: bold;
+    padding-top: 10px;
+
+}
+.submit1{
+    height: 40px;
+    width: 100px;
+    background-color: rgb(55, 55, 172);
+    border: none;
+    border-radius: 5px ;
+    margin-bottom: 1px;
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+    
+  .submit1:hover {
+    background-color: #5351adbd; 
+    color: white;
+  }
+
+  .submit1Alt{
+    width: 50%;   
+    color: aliceblue;
+    text-align: center;
+    font-size: 1.1rem;   
+    border:none;
+    border-radius: 5px ;
+    padding:5px;
+    margin-top:25px;   
+    transition-duration: 0.4s;
+    background-color: rgb(4, 153, 103);
+}
+    
+  .submit1Alt:hover {
+    background-color: #00d6a8bd; 
+    color: white;
+  }
+.cajaDelete{
+   
+    display: flex;
+    justify-content: flex-end;
+}
+  .submit2{
+    color: white;    
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    background-color: #02008fbd; 
+    border: none;
+    border-radius: 5px ;
+    margin-bottom: 3px;
+    font-size: 1.2rem;
+    margin-right: 3px;
+    margin-top: 3px;
+    
+}
+    
+  .submit2:hover {
+    background-color: #5351adbd; 
+    color: white;
+  }
+
+
+.title{
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 600px) {
+    .leftBox {
+      display: none;
+    }
+    .leftBox {
+      display: none;
+    }
+  }

@@ -26,10 +26,10 @@
     padding-left: 120px;
 }
 .links{
-    max-width: 15%;
-    min-width: 15%;
+    max-width: 45%;
+    min-width: 45%;
     display: flex;   
-    justify-content: space-between;
+    justify-content: space-around;
     padding-right: 120px;
     font-size: 1.3rem;
 }
