@@ -1,16 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="formulario-registro.component.css" type="text/css">
-    <title>Document</title>
-</head>
-<body>
-    <div class="form">
-        <div class="title">Bienvenido</div>
+<div class="cuerpo">
+  <div class="form">
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+      <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" name="nombre" class="form-control" [(ngModel)]="usuario.nombre" #nombre="ngModel"
+          [ngClass]="{'is-invalid': (nombre.dirty || nombre.touched) && nombre.invalid }" required>
+          <div class="invalid-feedback" *ngIf="(nombre.dirty || nombre.touched) && nombre.invalid">
+        <p *ngIf="nombre.errors.required">El nombre es obligatorio<p>
+      </div>
+    </div>
+      <div class="form-group">
+        <label>Apellidos</label>
+        <input type="text" name="apellidos" class="form-control" [(ngModel)]="usuario.apellidos" #apellidos="ngModel"
+          [ngClass]="{'is-invalid':(apellidos.dirty || apellidos.touched) && apellidos.invalid}" required>
+          <div class="invalid-feedback" *ngIf="(apellidos.dirty || apellidos.touched) && apellidos.invalid">          
+        <p *ngIf="apellidos.errors.required">El apellido es obligatorio</p>
+      </div>
+      </div>         
+
+      <div class="form-group">
+        <label>Correo</label>
+        <input type="email" name="correo" class="form-control" [(ngModel)]="usuario.correo" #email="ngModel"
+          [ngClass]="{'is-invalid': (email.dirty || email.touched) && email.invalid }" email required>
+        <div *ngIf="(email.dirty || email.touched) && email.invalid" class="invalid-feedback">
+          <div  *ngIf="email.errors.required">La dirección de email es obligatoria</div>
+          <div  *ngIf="email.errors.email">La dirección no es válida</div>
+         </div>
+      </div>
+
+      <div class="form-group">
+        <label>URL</label>
+        <input type="text" name="url" class="form-control" [(ngModel)]="usuario.url" #url="ngModel"
+          [ngClass]="{'is-invalid': (url.dirty || url.touched) && url.invalid }" required>
+          <div class="invalid-feedback" *ngIf="(url.dirty || url.touched) && url.invalid">   
+        <p *ngIf="url.errors.required">La url es obligatoria</p>
+      </div>
+      </div>
+
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input type="password" name="password" class="form-control" [(ngModel)]="usuario.password" #password="ngModel"
+          [ngClass]="{'is-invalid': (password.dirty || password.touched) && password.invalid }" minlength="8" required>
+          <div class="invalid-feedback" *ngIf="(password.dirty || password.touched) && password.invalid">   
+        <div *ngIf="password.errors.required">La contraseña es obligatoria</div>
+        <div *ngIf="password.errors.minlength">La contraseña debe tener al menos 8 caracteres</div>
+      </div>
+      </div>
+      <div class="form-group">
+        <label>Repite Contraseña</label>
+        <input type="password" name="password2" class="form-control" [(ngModel)]="registro.pass2" #password2="ngModel"
+          [ngClass]="{'is-invalid': (password2.dirty || password2.touched) && password2.invalid }" minlength="8" required>
+          <div class="invalid-feedback" *ngIf="(password2.dirty || password2.touched) && password2.invalid">
+        <div *ngIf="password.errors.required">La contraseña es obligatoria</div>
+        <div *ngIf="password.errors.minlength">La contraseña debe tener al menos 8 caracteres</div>
+       
+      </div>
+     
+      </div>
+      <button class="btn btn-danger btn-block" [disabled]="userForm.invalid">Registrate</button>
+      <!-- <div class="title">Bienvenido</div>
         <div class="subtitle">¡Crea tu cuenta!</div>
         <div class="input-container ic1">
           <input #input1 id="firstname" class="input" type="text" placeholder=" " />
@@ -43,10 +91,8 @@
             <label for="passwordres" class="placeholder">Repeat pass</label>
           </div>         
 
-        <button type="button" on-click=registrarse(input1,input2,input3,input4,input5,input6) class="submit">submit</button>
-      </div>
+        <button type="button" on-click=registrarse(input1,input2,input3,input4,input5,input6) class="submit">submit</button> -->
 
-
-      
-</body>
-</html>
+    </form>
+  </div>
+</div>

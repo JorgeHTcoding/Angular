@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/shared/usuario.service';
+import { FormGroup, NgForm } from '@angular/forms';
+import { Registro } from 'src/app/models/registro';
 
 @Component({
   selector: 'app-formulario-registro',
@@ -8,19 +10,24 @@ import { UsuarioService } from 'src/app/shared/usuario.service';
   styleUrls: ['./formulario-registro.component.css']
 })
 export class FormularioRegistroComponent implements OnInit {
+public myForm: FormGroup;
+public usuario: Usuario;
+public registro: Registro;
+public passCheck: string = "Las contraseñas no coinciden";
 
-  constructor(public usuarioService: UsuarioService) { }
-  registrarse(nombre:HTMLInputElement,apellidos:HTMLInputElement,correo:HTMLInputElement,url:HTMLInputElement, password:HTMLInputElement, verifyPass:HTMLInputElement){
-    console.log("aquillegamos")
-    if(password.value == verifyPass.value){      
-      let usuario:Usuario = new Usuario(nombre.value, apellidos.value,correo.value,url.value,password.value)
-      console.log(nombre.value + "aqui el nombre")
-      this.usuarioService.registrar(usuario).subscribe((data)=>{
+  constructor(public usuarioService: UsuarioService) { 
+    this.usuario = new Usuario("","","","","");
+    this.registro = new Registro(this.usuario,"")
+  }  
+  onSubmit(form:NgForm){
+    console.log(form.value)
+    console.log(this.usuario)
+    if(this.usuario.password != this.registro.pass2){
+      console.log("Las contraseñas no coinciden")
+    }else{
+      this.usuarioService.registrar(this.usuario).subscribe((data:Usuario)=>{
         console.log(data)
       })
-      console.log("enviamos")
-    }else{
-      console.log("Las contraseñas no coinciden")
     }
   }
   ngOnInit(): void {
