@@ -16,6 +16,8 @@ import { UpdatebookComponent } from './pages/updatebook/updatebook.component';
 import { ShowbookComponent } from './pages/showbook/showbook.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RouterModule, ROUTES } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -40,7 +42,9 @@ import { RouterModule, ROUTES } from '@angular/router';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

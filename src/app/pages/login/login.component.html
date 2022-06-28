@@ -1,18 +1,26 @@
 <div class="cuerpo">
-<div class="form">
-    <div class="title">Log-In</div>
-    <div class="subtitle">¡Introduce tu correo y contraseña!</div>
-    <div class="input-container ic1">
-      <input #input1 id="firstname" class="input" type="text" placeholder=" " />
-      <div class="cut"></div>
-      <label for="firstname" class="placeholder">Correo</label>
-    </div>
-    <div class="input-container ic2">
-      <input #input2 id="lastname" class="input" type="text" placeholder=" " />
-      <div class="cut"></div>
-      <label  for="lastname" class="placeholder">Contraseña</label>
-    </div>
-   
-    <button type="button" on-click=runLogin(input1,input2) class="submit">Entrar</button>
-  </div>
-</div>
+  <div class="form">
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+      <div class="title">Log-In</div>
+      <div class="subtitle">¡Introduce tu correo y contraseña!</div>
+      <div class="form-group">
+        <label>Correo</label>
+        <input type="email" name="correo" class="form-control" [(ngModel)]="usuario.correo" #correo="ngModel"
+          [ngClass]="{'is-invalid': (correo.dirty || correo.touched) && correo.invalid }" required>
+        <div class="invalid-feedback" *ngIf="(correo.dirty || correo.touched) && correo.invalid">
+          <div *ngIf="email.errors.required">La dirección de email es obligatoria</div>
+          <div *ngIf="email.errors.email">La dirección no es válida</div>
+        </div>
+        <div class="form-group">
+          <label>Contraseña</label>
+          <input type="text" name="password" class="form-control" [(ngModel)]="usuario.password " #password="ngModel"
+            [ngClass]="{'is-invalid': (password .dirty || password .touched) && password .invalid }" required>
+          <div class="invalid-feedback" *ngIf="(password .dirty || password .touched) && password .invalid">
+            <p *ngIf="password .errors.required">El password es obligatorio
+            <p>
+          </div>
+
+          <button class="btn btn-danger btn-block" [disabled]="userForm.invalid">Log-In</button>
+        </div>
+      </div>
+    </form>
