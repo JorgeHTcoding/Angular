@@ -13,10 +13,16 @@ import { observable } from 'rxjs';
   styleUrls: ['./showbook.component.css']
 })
 export class ShowbookComponent implements OnInit {
-  public books: Libro[];
-
-  constructor(public servicioService: ServicioService, public usuarioService: UsuarioService) {
-
+  public libro:Libro;
+  public books:Libro[];
+  public libroHijo: Libro;
+ 
+  constructor( public servicioService: ServicioService, public usuarioService: UsuarioService) {
+    this.servicioService.getAll(this.usuarioService.usuario.id_usuario).subscribe((data: Libro[]) => {
+       this.books = data;
+      
+      console.log(data)
+    })
   }
 
   enviar(id_libro: HTMLInputElement) {
@@ -42,13 +48,17 @@ export class ShowbookComponent implements OnInit {
     }
   }
 
-  eliminar(id_libro: HTMLInputElement) {
-    this.books = [];
-    let IDlibro: number = id_libro.valueAsNumber;
+  eliminar(id_libro: number) { 
+    let IDlibro: number = id_libro;
     console.log(IDlibro + "dentro del enviar")
     if (id_libro != null) {
-      this.servicioService.delete(IDlibro).subscribe((data:Libro[]) => {
-        console.log(data)
+      this.servicioService.delete(IDlibro).subscribe((data:Libro[]) => { 
+        for(let i = 0; i < this.books.length; i++){
+          if(id_libro == this.books[i].id_libro ){
+          this.books.splice(i,1)
+        }      
+      }
+          console.log(data)
       })
 
     }

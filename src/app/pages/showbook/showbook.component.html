@@ -3,51 +3,14 @@
         <div class="boxBusc">
             <div class="input1Box">
                 <input #input1 class="input1" type="number" placeholder=" Introduce ID de libro ">
-                <button on-click=enviar(input1) class="submit1">Buscar</button>
-                <button on-click=eliminar(input1) class="submit1">Eliminar</button>
+                <button  class="submit1">Buscar</button>              
             </div>            
         </div>
-   
-        <div class="bloqueCards">
-            <div class="cards" *ngFor="let valor of books ; let i = index; odd as isOdd">
-                <div class="card">
-                    <div class="cardBox">
-                        <div class="cardBoxBody">
-                            <div class="cajaDelete">
-                                <button class="submit2">x</button>
-                                <!-- on-click=deleteOne(valor.id_libro) -->
-                            </div>
-                            <div class="bloqueImg">
-                                <img class="fotoLibro" src={{valor.foto}}>
-                            </div>
-                            <h3 class="nombreLibro" id="nombreLibro">{{valor.titulo}}</h3>
-                            <div class="bloqueLibro">
-                                <div class="bloqueCampo">
-
-                                    <div class="campo">ID User:</div>
-                                    <div class="campo">Tipo</div>
-                                    <div class="campo">Autor</div>
-                                    <div class="campo">Precio</div>
-                                </div>
-                                <div class="bloqueValor">
-                                    <div class="box2">
-                                        <div class="valorCampo"> {{valor.id_usuario}}</div>
-                                    </div>
-                                    <div class="box4">
-                                        <div class="valorCampo">{{valor.tipo}} </div>
-                                    </div>
-                                    <div class="box5">
-                                        <div class="valorCampo">{{valor.autor}} </div>
-                                    </div>
-                                    <div class="box7">
-                                        <div class="valorCampo">{{valor.precio}} € </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  
+      <div class="bloqueCards">
+            <div class="cards" *ngFor="let libro of books ; let i = index; odd as isOdd">  
+                <app-card [cardPadre]="libro" (eventoCard)="eliminar($event)"></app-card>             
             </div>
-        </div>
+        </div> 
     </div>
 </div>

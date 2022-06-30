@@ -17,6 +17,7 @@ import { ShowbookComponent } from './pages/showbook/showbook.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RouterModule, ROUTES } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { CardComponent } from './component/card/card.component';
 
 
 
@@ -35,7 +36,8 @@ import { FormsModule } from '@angular/forms';
     AddbookComponent,
     UpdatebookComponent,
     ShowbookComponent,
-    LoginComponent, 
+    LoginComponent,
+    CardComponent, 
       
   ],
   imports: [
